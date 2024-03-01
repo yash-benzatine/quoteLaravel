@@ -16,9 +16,134 @@
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
     @stack('third_party_stylesheets')
     @stack('page_css')
+    <style>
+        #inputImage {
+            height: auto;
+        }
+
+        .bcap {
+            color: red !important;
+        }
+
+        td {
+            vertical-align: middle !important;
+        }
+
+        .dataTables_filter label {
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .preloader {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: 999999999 !important;
+            background-color: #ffffff80;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .preloader .lds-ellipsis {
+            display: inline-block;
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            margin-top: -40px;
+            margin-left: -40px;
+            top: 50%;
+            left: 50%;
+        }
+
+        .preloader .lds-ellipsis div:nth-child(1) {
+            left: 8px;
+            animation: lds-ellipsis1 0.6s infinite;
+        }
+
+        .preloader .lds-ellipsis div {
+            position: absolute;
+            top: 33px;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: #30a5ff;
+            animation-timing-function: cubic-bezier(0, 1, 1, 0);
+        }
+
+        .preloader .lds-ellipsis div:nth-child(2) {
+            left: 8px;
+            animation: lds-ellipsis2 0.6s infinite;
+        }
+
+        .preloader .lds-ellipsis div:nth-child(3) {
+            left: 32px;
+            animation: lds-ellipsis2 0.6s infinite;
+        }
+
+        .preloader .lds-ellipsis div:nth-child(4) {
+            left: 56px;
+            animation: lds-ellipsis3 0.6s infinite;
+        }
+
+        @keyframes lds-ellipsis1 {
+            0% {
+                transform: scale(0);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes lds-ellipsis3 {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(0);
+            }
+        }
+
+        @keyframes lds-ellipsis2 {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(24px, 0);
+            }
+        }
+
+        div.dataTables_wrapper div.dataTables_filter input {
+            width: 100% !important;
+            height: unset;
+            background-color: #fff;
+        }
+    </style>
+    <script>
+        window.addEventListener('load', function() {
+            var loader = document.getElementById('loader');
+            if (loader) {
+                loader.style.display = 'none';
+            }
+        });
+    </script>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
+    <div class="preloader" id="loader">
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
     <div class="wrapper">
         <!-- Main Header -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -101,6 +226,23 @@
             wheel: false,
             loop: false,
             arrows: false
+        });
+    </script>
+    <script>
+        $.fn.textWidth = function() {
+            var html_org = $(this).html();
+            var html_calc = '<span>' + html_org + '</span>';
+            $(this).html(html_calc);
+            var width = $(this).find('span:first').width();
+            $(this).html(html_org);
+            return width;
+        };
+
+        $('.projects').on('draw.dt', function(e) {
+            $('.projects thead tr th').each(function(idx, ele) {
+                var xPos = parseInt((($(ele).width() + $(ele).textWidth()) / 2) + 20);
+                $(ele).css('background-position-x', xPos + 'px')
+            })
         });
     </script>
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>

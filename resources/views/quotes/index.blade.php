@@ -33,10 +33,10 @@
                                 #
                             </th>
                             <th style="width: 30%">
-                                Category Name
+                                Quote
                             </th>
                             <th style="width: 30%">
-                                Quote
+                                Category Name
                             </th>
                             <th style="width: 20%">
                                 Created at (UTC)
@@ -53,10 +53,10 @@
                                     {{ $key + 1 }}
                                 </td>
                                 <td>
-                                    {{ $quote->category->category_name }}
+                                    {{ $quote->quote }}
                                 </td>
                                 <td>
-                                    {{ $quote->quote }}
+                                    {{ $quote->category->category_name }}
                                 </td>
                                 <td class="project-state">
                                     {{ $quote->created_at }}
@@ -67,7 +67,7 @@
                                         </i>
                                         Edit
                                     </a>
-                                    <form action="{{ route('quotes.destroy', $quote->id) }}" method="POST">
+                                    <form action="{{ route('quotes.destroy', $quote->id) }}" onclick="return confirm('Are you sure to delete ths quote?')" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger btn-sm ml-2">

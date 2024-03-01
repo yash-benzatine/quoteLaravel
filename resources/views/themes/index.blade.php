@@ -77,7 +77,7 @@
                                             </i>
                                             Edit
                                         </a>
-                                        <form action="{{ route('themes.destroy', $theme->id) }}" method="POST">
+                                        <form action="{{ route('themes.destroy', $theme->id) }}" onclick="return confirm('Are you sure to delete ths theme?')" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger btn-sm ml-2">

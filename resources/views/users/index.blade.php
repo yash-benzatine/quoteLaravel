@@ -73,7 +73,7 @@
                                     {{ $user->created_at }}
                                 </td>
                                 <td class="project-actions row" style="display: flex;justify-content:center;align-items: center;">
-                                    <form action="{{ route('users.destroy', $user->id) }}" method="POST">
+                                    <form action="{{ route('users.destroy', $user->id) }}" onclick="return confirm('Are you sure to delete ths user?')" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger btn-sm">
