@@ -41,7 +41,7 @@
                                 Device type
                             </th>
                             <th>
-                                Created at
+                                Created at (UTC)
                             </th>
                             <th>
                                 Action

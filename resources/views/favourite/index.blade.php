@@ -32,7 +32,7 @@
                                 Quote
                             </th>
                             <th>
-                                Created at
+                                Created at (UTC)
                             </th>
                         </tr>
                     </thead>

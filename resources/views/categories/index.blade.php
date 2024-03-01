@@ -39,7 +39,7 @@
                                 Category img
                             </th>
                             <th style="width: 30%">
-                                Created at
+                                Created at (UTC)
                             </th>
                             <th style="width: 20%">
                                 Action

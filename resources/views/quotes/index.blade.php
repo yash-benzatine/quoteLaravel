@@ -39,7 +39,7 @@
                                 Quote
                             </th>
                             <th style="width: 20%">
-                                Created at
+                                Created at (UTC)
                             </th>
                             <th style="width: 20%">
                                 Action
