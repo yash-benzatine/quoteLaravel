@@ -59,7 +59,7 @@
                                     <td>
                                         <a href="{{ asset($category->category_thumbnail) }}" data-fancybox="group"
                                             data-caption="{{ $category->category_name }}">
-                                            <img alt="Avatar" class="table-avatar"
+                                            <img alt="Avatar" class="table-avatar" width="50" height="50"
                                                 src="{{ asset($category->category_thumbnail) }}" />
                                         </a>
                                     </td>

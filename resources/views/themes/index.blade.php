@@ -62,7 +62,7 @@
                                     <td>
                                         <a href="{{ asset($theme->theme_img) }}" data-fancybox="group"
                                             data-caption="{{ $theme->theme_name }}">
-                                            <img alt="Avatar" class="table-avatar" src="{{ asset($theme->theme_img) }}" />
+                                            <img alt="Avatar" class="table-avatar" width="50" height="50" src="{{ asset($theme->theme_img) }}" />
                                         </a>
                                     </td>
                                     <td>

@@ -15,7 +15,7 @@ class FavouriteController extends Controller
 
     public function index()
     {
-        $favourites = Favourite::with('user','quote')->orderBy('id','desc')->get();
+        $favourites = Favourite::with('user','quote')->whereHas('quote')->whereHas('user')->orderBy('id','desc')->get();
         return view('favourite.index', compact('favourites'));
     }
 }

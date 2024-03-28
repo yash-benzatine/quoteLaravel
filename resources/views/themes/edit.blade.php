@@ -30,7 +30,7 @@
                             <div class="form-group">
                                 <label for="inputDescription">Theme Image</label>
                                 <input type="file" id="inputImage" name="image" class="form-control">
-                                <img alt="Avatar" class="table-avatar mt-3" id="theme-img-tag" width="50" src="{{ asset($theme->theme_img) }}">
+                                <img alt="Avatar" class="table-avatar mt-3" id="theme-img-tag" height="100" width="100" src="{{ asset($theme->theme_img) }}">
                             </div>
                             <div class="form-group float-left">
                                 <label for="inputDescription">Is Purchase (Select this if purches)</label>

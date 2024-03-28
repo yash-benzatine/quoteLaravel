@@ -24,7 +24,7 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="inputName">Quote Name</label>
-                                <input type="text" id="inputName" name="name" class="form-control"
+                                <input type="text" id="inputName" name="quote" class="form-control"
                                     value="{{ $quote->quote }}" required autocomplete="off">
                             </div>
                             <div class="form-group">

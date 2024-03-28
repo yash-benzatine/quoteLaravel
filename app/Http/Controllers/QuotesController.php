@@ -15,7 +15,7 @@ class QuotesController extends Controller
 
     public function index()
     {
-        $quotes = Quote::with('category')->orderBy('id', 'desc')->get();
+        $quotes = Quote::with('category')->whereHas('category')->orderBy('id', 'desc')->get();
         return view('quotes.index', compact('quotes'));
     }
 

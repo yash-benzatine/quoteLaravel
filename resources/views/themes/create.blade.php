@@ -30,7 +30,7 @@
                             <div class="form-group">
                                 <label for="inputDescription">Theme Image</label>
                                 <input type="file" id="inputImage" name="image" class="form-control" required>
-                                <img class="table-avatar mt-3" id="theme-img-tag" width="50" src="#"
+                                <img class="table-avatar mt-3" id="theme-img-tag" height="100" width="100" src="#"
                                     style="display: none">
                             </div>
                             <div class="form-group float-left">

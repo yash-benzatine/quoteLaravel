@@ -30,7 +30,7 @@
                             <div class="form-group">
                                 <label for="inputDescription">Category Image</label>
                                 <input type="file" id="inputImage" name="image" class="form-control">
-                                <img alt="Avatar" class="table-avatar mt-3" id="category-img-tag" src="{{ asset($category->category_thumbnail) }}">
+                                <img alt="Avatar" class="table-avatar mt-3" id="category-img-tag" height="100" width="100" src="{{ asset($category->category_thumbnail) }}">
                             </div>
                         </div>
                     </div>

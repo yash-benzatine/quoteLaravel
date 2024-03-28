@@ -172,7 +172,7 @@ class ApiController extends Controller
             if (!$user) {
                 return $this->sendError('Unauthorised.', ['error' => 'Unauthorised']);
             } else {
-                $favourite = Favourite::with('quote')->where(['user_id' => $request->user_id])->orderBy('id','desc')->first();
+                $favourite = Favourite::with('quote')->where(['user_id' => $request->user_id])->orderBy('id','desc')->get();
                 return $this->sendResponse($favourite, 'Get favourite quotes successfully.');
             }
         } catch (\Exception $ex) {
